@@ -1,11 +1,6 @@
 pipeline {
 	agent any
 	stages {
-		stage('Clone Repo'){
-			steps{
-			sh 'ls'
-			}
-		}
 		stage('Build Jar'){
 			steps{
 			sh 'mvn clean package'
@@ -13,7 +8,7 @@ pipeline {
 		}
 		stage('Run Jar'){
 			steps{
-			sh 'ls'
+			sh 'java -jar target/monitors-0.0.1-SNAPSHOT.jar &'
 			}
 		}
 
