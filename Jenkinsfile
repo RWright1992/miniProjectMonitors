@@ -1,6 +1,12 @@
 pipeline {
 	agent any
 	stages {
+		stage('Remove old Jar'){
+                        steps{
+                        sh 'rm -rf target'
+                        }
+                }
+
 		stage('Build Jar'){
 			steps{
 			sh 'mvn clean package'
