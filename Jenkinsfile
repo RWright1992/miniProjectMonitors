@@ -3,7 +3,7 @@ pipeline {
 	stages {
 		stage('Remove old Jar'){
                         steps{
-                        sh 'rm -rf target'
+                        sh 'if [ -d "target" ]; then rm -Rf target; fi'
                         }
                 }
 
@@ -14,7 +14,7 @@ pipeline {
 		}
 		stage('Run Jar'){
 			steps{
-			java '-jar target/monitors-0.0.1-SNAPSHOT.jar &'
+			'java -jar target/monitors-0.0.1-SNAPSHOT.jar &'
 			}
 		}
 
