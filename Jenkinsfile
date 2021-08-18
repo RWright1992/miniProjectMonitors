@@ -8,7 +8,7 @@ pipeline {
 		}
 		stage('Run Jar'){
 			steps{
-			sh 'java -jar target/monitors-0.0.1-SNAPSHOT.jar &'
+			java '-jar target/monitors-0.0.1-SNAPSHOT.jar &'
 			}
 		}
 
