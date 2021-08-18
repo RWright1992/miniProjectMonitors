@@ -3,7 +3,7 @@ pipeline {
 	stages {
 		stage('Clone Repo'){
 			steps{
-			sh 'git clone https://github.com/RWright1992/miniProjectMonitors.git'
+			sh 'git fetch https://github.com/RWright1992/miniProjectMonitors.git'
 			}
 		}
 		stage('Build Jar'){
